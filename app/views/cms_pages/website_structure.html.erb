@@ -1,0 +1,79 @@
+<% provide(:title, "Website structure") %>
+<h1>Website structure</h1>
+
+<div class="row">
+	<div class="col-md-5">
+		<div class="btn-group">
+			<% if @website %>
+				<%= link_to 'Edit website', edit_website_path(@website), { :class => "btn btn-default" } %>
+	    <% else %>
+				<%= link_to 'New website', new_website_path, { :class => "btn btn-default" } %> 
+			<% end %>
+			<%= link_to 'New navbar item', new_navbar_item_path, { :class => "btn btn-default" } %>
+			<%= link_to 'New page', new_page_path, { :class => "btn btn-default" } %>
+		</div>
+	</div>
+</div>
+<p></p>
+<div class="row">
+	<div class="col-md-12">
+		<table class="table table-hover">
+		  <thead>
+		    <tr>
+		      <th>Navbar item</th>
+		      <th>Pages</th>
+		    </tr>
+		  </thead>
+
+		  <tbody>
+		    <% @navbar_items.each do |navbar_item| %>
+		    	<div class="row">
+			      <tr>
+			        <td><h4><%= navbar_item.name  %></h4><br>
+			        	<%= link_to 'Edit', edit_navbar_item_path(navbar_item), class: "btn btn-default btn-xs" %> 
+			        	<%= link_to 'Delete', navbar_item, method: :delete, data: { confirm: 'Are you sure?' },
+			        	class: "btn btn-default btn-xs" %> <br> 
+			        </td>
+			        <td>
+			        	<br>
+			        	<ul class="list-group">
+										<% navbar_item.pages.order(:created_at).each do |page| %>
+											<li class="list-group-item">
+												<strong><%= page.title %></strong>&nbsp;&nbsp;
+												<%= link_to 'Edit', edit_page_path(page), class: "btn btn-default btn-xs" %> 
+												<%= link_to 'Delete', page, method: :delete, 
+												data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs" %>
+											</li>
+										<% end %>
+								</ul>
+			        </td>
+			      </tr>
+			    </div>
+		    <% end %>
+		    <% if @independent_pages.any? %>
+			    <div class="row">
+				    <tr>
+				    	<td><h4>None</h4></td>
+				    	<td>
+				    		<br>
+						    <ul class="list-group">
+									<% @independent_pages.each do |page| %>
+										<li class="list-group-item">
+											<strong><%= page.title %></strong>&nbsp;&nbsp;
+											<%= link_to 'Edit', edit_page_path(page), class: "btn btn-default btn-xs" %>
+											<%= link_to 'Delete', page, method: :delete, 
+											data: { confirm: 'Are you sure?' }, class: "btn btn-default btn-xs" %>
+										</li>
+									<% end %>
+								</ul>
+							</td>
+						</tr>
+					</div>
+				<% end %>
+		  </tbody>
+		</table>
+	</div>
+</div>
+
+
+

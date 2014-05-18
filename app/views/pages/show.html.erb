@@ -1,0 +1,30 @@
+<div class="row">
+	<div class="col-md-6">
+		<ul class="list-group">
+		  <li class="list-group-item">
+			  <strong>Title: </strong><%= @page.title %>
+		  </li>
+		  <li class="list-group-item">
+		  	<strong>Body: </strong><%= @page.body %>
+		  </li>
+		  <li class="list-group-item">
+		  	<strong>Navbar item: </strong>
+		  	<% if @page.navbar_item %>
+		  		<%= @page.navbar_item.name %>
+		  	<% else %>
+		  		None
+		  	<% end %>
+		  </li>
+		  <li class="list-group-item">
+		  	<strong>Slug: </strong><%= @page.slug %>
+		  </li>
+		  <li class="list-group-item">
+		  	<strong>Updated: </strong><%= @page.updated_at.day %>. <%= @page.updated_at.month %>.
+		  	<%= @page.updated_at.year %>.
+		  </li>
+		</ul>
+	</div>
+</div>
+
+
+

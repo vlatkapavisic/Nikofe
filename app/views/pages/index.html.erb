@@ -1,0 +1,32 @@
+<h1>Pages</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th></th>
+      <th>Title</th>
+      <th>Navbar item</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @pages.each do |page| %>
+      <tr>
+        <td><%= page.user_id %></td>
+        <td><%= link_to page.title, page  %></td>
+        <td>
+          <% if page.navbar_item_id %>
+            <%= link_to page.navbar_item_id, navbar_item_path(page.navbar_item_id)  %></td>
+          <% end %>
+        <td><%= link_to 'Edit', edit_page_path(page) %></td>
+        <td><%= link_to 'Destroy', page, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+

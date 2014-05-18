@@ -1,0 +1,29 @@
+<h1>Navbar</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th>User</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @navbar_items.each do |navbar_item| %>
+      <tr>
+        <td><%= navbar_item.name %>&nbsp;</td>
+        <td><%= link_to 'Show', navbar_item %></td>
+        <td><%= link_to 'Edit', edit_navbar_item_path(navbar_item) %></td>
+        <td><%= link_to 'Destroy', navbar_item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= navbar_item.user_id %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Navbar item', new_navbar_item_path %>

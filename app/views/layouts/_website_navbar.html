@@ -1,0 +1,35 @@
+<header class="navbar navbar-fixed-top navbar-default" style="background-color: <%= @website.navbar_color %>">
+	<div class="container">
+		<div class="navbar-inner">
+			<div class="navbar-header">
+	      <button class="navbar-toggle" type="button" data-toggle="collapse" data-target=".bs-navbar-collapse">
+	        <span class="sr-only">Toggle navigation</span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	        <span class="icon-bar"></span>
+	      </button>
+	      <%= link_to @website.name, website_preview_path, class: 'navbar-brand', style: "color: #{@website.navbar_text_color}" %>
+    	</div>
+			<nav>
+				<ul class="nav navbar-nav">
+					<% @navbar_items.each do |navbar_item| %>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" style="color: <%= @website.navbar_text_color %>"
+							><%= navbar_item.name %><b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<% navbar_item.pages.order(:created_at).each do |page| %>
+									<li><%= link_to "#{page.title}", show_page_path(website_slug: @website.slug, page_slug: page.slug) %></li>
+								<% end %>
+							</ul>
+						</li>
+					<% end %>
+					<% @independent_pages.each do |independent_page| %>
+						<li><%= link_to "#{independent_page.title}", show_page_path(website_slug: @website.slug, page_slug: independent_page.slug), 
+						style: "color: #{@website.navbar_text_color}" %></li>
+					<% end %>
+				</ul>
+			</nav>
+		</div>
+	</div>
+</header>
+
