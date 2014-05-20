@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520082907) do
+ActiveRecord::Schema.define(version: 20140520093106) do
 
   create_table "bootsy_image_galleries", force: true do |t|
     t.integer  "bootsy_resource_id"
@@ -95,6 +95,7 @@ ActiveRecord::Schema.define(version: 20140520082907) do
     t.integer  "favicon_file_size"
     t.datetime "favicon_updated_at"
     t.integer  "navitems_count"
+    t.string   "slug"
   end
 
   add_index "websites", ["user_id"], name: "index_websites_on_user_id"

@@ -15,7 +15,7 @@
 					<% if user_signed_in? %>
 						<li><%= link_to "Website structure", website_structure_path, :class => 'navbar-link' %></li>
 						<% if @website && @website.name %>
-							<li><%= link_to "Website preview", website_preview_path(website_slug: @website.name.parameterize), :class => 'navbar-link', :target => '_blank' %></li>
+							<li><%= link_to "Website preview", website_preview_path(website_slug: @website.slug), :class => 'navbar-link', :target => '_blank' %></li>
 						<% end %>
 					<% end %>
 				</ul>
