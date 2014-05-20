@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140504204508) do
+ActiveRecord::Schema.define(version: 20140520075704) do
 
   create_table "bootsy_image_galleries", force: true do |t|
     t.integer  "bootsy_resource_id"
@@ -32,6 +32,7 @@ ActiveRecord::Schema.define(version: 20140504204508) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.integer  "navbar_position"
   end
 
   add_index "navbar_items", ["name"], name: "index_navbar_items_on_name", unique: true
@@ -48,6 +49,8 @@ ActiveRecord::Schema.define(version: 20140504204508) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
+    t.integer  "navbar_position"
+    t.integer  "pages_count"
   end
 
   add_index "pages", ["navbar_item_id"], name: "index_pages_on_navbar_item_id"
@@ -87,6 +90,12 @@ ActiveRecord::Schema.define(version: 20140504204508) do
     t.string   "navbar_color",            default: "#F8F8F8"
     t.string   "navbar_text_color"
     t.string   "jumbotron_text_color"
+    t.string   "favicon_file_name"
+    t.string   "favicon_content_type"
+    t.integer  "favicon_file_size"
+    t.datetime "favicon_updated_at"
+    t.integer  "navitems_count"
+    t.string   "slug"
   end
 
   add_index "websites", ["user_id"], name: "index_websites_on_user_id"

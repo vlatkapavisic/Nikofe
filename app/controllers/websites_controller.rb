@@ -18,6 +18,7 @@ class WebsitesController < ApplicationController
   def create
     website_ps = website_params # to_do: prettify
     website_ps[:user_id] = current_user.id # protection against mass assignment!
+    website_ps[:slug] = website_params[:name].parameterize
     @website = Website.new(website_ps)
 
     respond_to do |format|
