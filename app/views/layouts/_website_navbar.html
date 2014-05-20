@@ -18,13 +18,13 @@
 							><%= navbar_item.name %><b class="caret"></b></a>
 							<ul class="dropdown-menu">
 								<% navbar_item.pages.order(:created_at).each do |page| %>
-									<li><%= link_to "#{page.title}", show_page_path(website_slug: @website.slug, page_slug: page.slug) %></li>
+									<li><%= link_to "#{page.title}", show_page_path(website_slug: @website.name.parameterize, page_slug: page.slug) %></li>
 								<% end %>
 							</ul>
 						</li>
 					<% end %>
 					<% @independent_pages.each do |independent_page| %>
-						<li><%= link_to "#{independent_page.title}", show_page_path(website_slug: @website.slug, page_slug: independent_page.slug), 
+						<li><%= link_to "#{independent_page.title}", show_page_path(website_slug: @website.name.parameterize, page_slug: independent_page.slug), 
 						style: "color: #{@website.navbar_text_color}" %></li>
 					<% end %>
 				</ul>
