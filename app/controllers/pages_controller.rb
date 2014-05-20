@@ -28,6 +28,7 @@ class PagesController < ApplicationController
     page_ps = page_params # to_do: prettify
     page_ps[:user_id] = current_user.id # protection against mass assignment!
     page_ps[:slug] = page_params[:title].parameterize
+    page_ps[:website_id] = @website.id
     @page = Page.new(page_ps)
 
     respond_to do |format|

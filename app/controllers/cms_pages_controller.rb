@@ -14,16 +14,28 @@ class CmsPagesController < ApplicationController
 	end
 
 	def show_page
-		@page = current_user.pages.find_by(slug: params[:page_slug])
+		if user_signed_in?
+			@page = current_user.pages.find_by(slug: params[:page_slug])
+		else
+			@website = Website.find_by(slug: params[:website_slug])
+			@page = Page.where("website_id = ? and slug = ?", @website.id, params[:page_slug]) #sve prebaciti u where
+		end
 	end
 
 	private
 	
 	def get_data
-		@pages = current_user.pages.all
-		@navbar_items = current_user.navbar_items.order(:created_at)
-		@independent_pages = current_user.pages.where(navbar_item_id: nil).order(:created_at)
-		@website = current_user.website
+		if user_signed_in?
+			@website = current_user.website
+			@pages = @website.pages
+			@navbar_items = @website.navbar_items.order(:created_at)
+			@independent_pages = @pages.where("navbar_item_id is NULL").order(:created_at)
+		else
+			@website = Website.find_by(slug: params[:website_slug])
+			@pages = @website.pages 
+			@navbar_items = @website.navbar_items.order(:created_at)
+			@independent_pages = @pages.where(["navbar_item_id is NULL and website_id = ?", @website.id]).order(:created_at)
+		end
 	end
 
 end
