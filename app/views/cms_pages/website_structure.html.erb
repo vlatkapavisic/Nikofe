@@ -6,11 +6,11 @@
 		<div class="btn-group">
 			<% if @website %>
 				<%= link_to 'Edit website', edit_website_path(@website), { :class => "btn btn-default" } %>
+				<%= link_to 'New navbar item', new_navbar_item_path, { :class => "btn btn-default" } %>
+				<%= link_to 'New page', new_page_path, { :class => "btn btn-default" } %>
 	    <% else %>
 				<%= link_to 'New website', new_website_path, { :class => "btn btn-default" } %> 
 			<% end %>
-			<%= link_to 'New navbar item', new_navbar_item_path, { :class => "btn btn-default" } %>
-			<%= link_to 'New page', new_page_path, { :class => "btn btn-default" } %>
 		</div>
 	</div>
 </div>
