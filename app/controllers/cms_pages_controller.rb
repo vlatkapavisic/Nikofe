@@ -26,10 +26,12 @@ class CmsPagesController < ApplicationController
 	
 	def get_data
 		if user_signed_in?
-			@website = current_user.website
-			@pages = @website.pages
-			@navbar_items = @website.navbar_items.order(:created_at)
-			@independent_pages = @pages.where("navbar_item_id is NULL").order(:created_at)
+			if current_user.website
+				@website = current_user.website
+				@pages = @website.pages
+				@navbar_items = @website.navbar_items.order(:created_at)
+				@independent_pages = @pages.where("navbar_item_id is NULL").order(:created_at)
+			end
 		else
 			@website = Website.find_by(slug: params[:website_slug])
 			@pages = @website.pages 
