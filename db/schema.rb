@@ -87,10 +87,6 @@ ActiveRecord::Schema.define(version: 20140504204508) do
     t.string   "navbar_color",            default: "#F8F8F8"
     t.string   "navbar_text_color"
     t.string   "jumbotron_text_color"
-    t.string   "favicon_file_name"
-    t.string   "favicon_content_type"
-    t.integer  "favicon_file_size"
-    t.datetime "favicon_updated_at"
   end
 
   add_index "websites", ["user_id"], name: "index_websites_on_user_id"
