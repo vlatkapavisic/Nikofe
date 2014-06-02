@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140520095900) do
+ActiveRecord::Schema.define(version: 20140602173752) do
 
   create_table "bootsy_image_galleries", force: true do |t|
     t.integer  "bootsy_resource_id"
@@ -36,7 +36,6 @@ ActiveRecord::Schema.define(version: 20140520095900) do
     t.integer  "website_id"
   end
 
-  add_index "navbar_items", ["name"], name: "index_navbar_items_on_name", unique: true
   add_index "navbar_items", ["user_id"], name: "index_navbar_items_on_user_id"
   add_index "navbar_items", ["website_id"], name: "index_navbar_items_on_website_id"
 
@@ -57,8 +56,6 @@ ActiveRecord::Schema.define(version: 20140520095900) do
   end
 
   add_index "pages", ["navbar_item_id"], name: "index_pages_on_navbar_item_id"
-  add_index "pages", ["slug"], name: "index_pages_on_slug", unique: true
-  add_index "pages", ["title"], name: "index_pages_on_title", unique: true
   add_index "pages", ["user_id"], name: "index_pages_on_user_id"
   add_index "pages", ["website_id"], name: "index_pages_on_website_id"
 

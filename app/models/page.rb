@@ -4,7 +4,7 @@ class Page < ActiveRecord::Base
 	belongs_to :navbar_item
 
 	validates :title, presence: true, length: { maximum: 30 },
-		uniqueness: { case_sensitive: false }
+		uniqueness: { scope: :website_id, case_sensitive: false }
 	validates :body, presence: true
 
 	include Bootsy::Container

@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   before_action :set_page, only: [:show, :edit, :update, :destroy]
   before_action :get_website
+  before_action :get_navbar_items, only: [:new, :edit, :create]
   before_action :authenticate_user!
 
   # GET /pages
@@ -15,12 +16,10 @@ class PagesController < ApplicationController
   # GET /pages/new
   def new
     @page = Page.new
-    @navbar_items = current_user.navbar_items.all
   end
 
   # GET /pages/1/edit
   def edit
-    @navbar_items = current_user.navbar_items.all
   end
 
   # POST /pages
@@ -74,6 +73,10 @@ class PagesController < ApplicationController
 
     def get_website
       @website = current_user.website
+    end
+
+    def get_navbar_items
+      @navbar_items = current_user.navbar_items.all
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
