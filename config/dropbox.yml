@@ -1,6 +1,7 @@
-app_key: "..."
-app_secret: "..."
-access_token: "..."
-access_token_secret: "..."
-user_id: "..."
-access_type: "dropbox|app_folder"
+app_key: "utavqq18ugdcbhh"
+app_secret: "3atvdwacu8lqhs3"
+access_token: "qj0v9qyzi7xj2tg5"
+access_token_secret: "2fu6kpcvwyrbe34"
+user_id: "167552825"
+access_type: "app_folder"
+
