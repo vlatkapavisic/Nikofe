@@ -118,14 +118,12 @@ footer ul li {
   background-image: url(image-path("roses.jpg"));
   color: #FFEBCD;
   background-size: cover;
-  height: 500px;
   text-align: center;
 }
 
 .website_jumbotron {
   color: grey;
   background-size: cover;
-  height: 500px;
   text-align: center;
 }
 
@@ -140,4 +138,8 @@ footer ul li {
 #forgot-pass-link:hover{
   background-color: transparent;
   color: #006666;
+}
+
+.login-btn{
+
 }

@@ -34,8 +34,10 @@ class WebsitesController < ApplicationController
 
   # PATCH/PUT /websites/1
   def update
+    website_ps = website_params # to_do: prettify
+    website_ps[:slug] = website_params[:name].parameterize
     respond_to do |format|
-      if @website.update(website_params)
+      if @website.update(website_ps)
         format.html { redirect_to website_structure_url, notice: 'Website was successfully updated.' }
         format.json { head :no_content }
       else

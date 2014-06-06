@@ -1,9 +1,11 @@
 class CmsPagesController < ApplicationController
 	layout "website_layout", only: [ :website_preview, :show_page ]
-	before_action :authenticate_user!, only: [ :website_structure, :home ]
+	before_action :authenticate_user!, only: [ :website_structure ]
 
 	def home
-		@website = current_user.website
+		if user_signed_in?
+			@website = current_user.website
+		end
 	end
 
 	def website_structure

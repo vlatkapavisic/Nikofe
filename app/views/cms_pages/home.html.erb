@@ -1,6 +1,14 @@
 <div class="jumbotron cms_jumbotron">
   <h1>Nikofe CMS</h1>
   <p>Create simple websites in a simple way.</p>
+  <% if not user_signed_in? %>
+  	<br><br><%= link_to "Login", new_user_session_path, :class => 'btn btn-default btn-lg login-btn', :type => 'button'  %>
+  <% end %>
 </div>
 
-
+<script
+	$(document).ready(function(){
+		var jumbotronHeight = $(window).height() - 225;
+		$(".jumbotron").height(jumbotronHeight);
+	});
+</script>
