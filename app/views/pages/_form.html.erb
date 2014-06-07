@@ -15,7 +15,7 @@
           <% end %>
 
           <div class="form-group">
-            <%= f.label :title %><small> (will appear in webiste's navbar)</small><br>
+            <%= f.label :title %><small> (will appear in website's navbar)</small><br>
             <%= f.text_field :title, class: "form-control input-with-feedback" %>
           </div>
           <div class="form-group">
@@ -23,13 +23,13 @@
             <%= f.bootsy_area :body, class: "form-control", rows: 12 %>
           </div>
           <div class="form-group">
-            <%= f.label :address %><small> (if you want to add a map; the map will appear beneath the page's body)</small><br>
+            <%= f.label :address %><small> (If you want to add a map beneath the page's body, enter full address (street, city, country).)</small><br>
             <%= f.text_field :address, class: "form-control input-with-feedback" %>
           </div>
           <div class="form-group">
             <%= f.label :navbar_item_id %><br>
             <%= f.select :navbar_item_id, @navbar_items.collect {|i| [ i.name, i.id ] }, { include_blank: true },
-              class: "form-control" %>
+              class: "form-control", id: "navitem-select" %>
           </div>
           <div><%= f.submit @button_text, class: "btn btn-default" %></div>
         <% end %>

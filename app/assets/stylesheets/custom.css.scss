@@ -10,6 +10,7 @@ body {
   padding-top: 60px;
 }
 
+
 section {
   overflow: auto;
 }
@@ -69,8 +70,6 @@ p {
   text-decoration: none;
 }
 
-/* footer */
-
 footer {
   margin-top: 45px;
   padding-top: 5px;
@@ -104,20 +103,6 @@ footer ul li {
   background-image: url(image-path("roses.jpg"));
   color: #FFEBCD;
   background-size: cover;
-  height: 500px;
-}
-
-.website_jumbotron {
-  color: grey;
-  background-size: cover;
-  height: 500px;
-  text-align: center;
-}
-
-.cms_jumbotron {
-  background-image: url(image-path("roses.jpg"));
-  color: #FFEBCD;
-  background-size: cover;
   text-align: center;
 }
 
@@ -143,3 +128,8 @@ footer ul li {
 .login-btn{
 
 }
+
+#navitem-select{
+  width: 15em;
+}
+
