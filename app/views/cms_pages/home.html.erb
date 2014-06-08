@@ -1,8 +1,8 @@
 <div class="jumbotron cms_jumbotron">
   <h1>Nikofe CMS</h1>
-  <p>Create simple websites in a simple way.</p>
+  <p>Secure app for simple web pages creation.</p>
   <% if not user_signed_in? %>
-  	<br><br><%= link_to "Login", new_user_session_path, :class => 'btn btn-default btn-lg login-btn', :type => 'button'  %>
+  	<br><%= link_to "Sign in", new_user_session_path, :class => 'btn btn-default btn-lg login-btn', :type => 'button' %><span id="or"> || </span><%= link_to "Sign up", new_user_registration_path, :class => 'btn btn-default btn-lg login-btn', :type => 'button' %>
   <% end %>
 </div>
 

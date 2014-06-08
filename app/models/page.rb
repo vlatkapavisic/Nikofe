@@ -7,8 +7,6 @@ class Page < ActiveRecord::Base
 		uniqueness: { scope: :website_id, case_sensitive: false }
 	validates :body, presence: true
 
-	#include Bootsy::Container
-
 	geocoded_by :address
 	after_validation :geocode
 end

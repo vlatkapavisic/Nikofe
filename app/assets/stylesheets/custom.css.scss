@@ -1,7 +1,5 @@
 @import "bootstrap";
 
-/* universal */
-
 html {
   overflow-y: scroll;
 }
@@ -27,8 +25,6 @@ textarea {
   margin-bottom: 10px;
 }
 
-/* typography */
-
 h1, h2, h3, h4, h5, h6 {
   line-height: 1;
 }
@@ -39,20 +35,10 @@ h1 {
   margin-bottom: 30px;
 }
 
-/*h2 {
-  font-size: 1.2em;
-  letter-spacing: -1px;
-  margin-bottom: 30px;
-  font-weight: normal;
-  color: #999;
-}*/
-
 p {
   font-size: 1.1em;
   line-height: 1.7em;
 }
-
-/* navbar */
 
 #logo {
   float: left;
@@ -104,6 +90,7 @@ footer ul li {
   color: #FFEBCD;
   background-size: cover;
   text-align: center;
+  text-shadow: 4px 4px 2px rgba(150, 150, 150, 1);
 }
 
 .website_jumbotron {
@@ -126,10 +113,25 @@ footer ul li {
 }
 
 .login-btn{
-
+  width: 7em;
+  text-shadow: none;
 }
 
 #navitem-select{
   width: 15em;
 }
+
+#or{
+  font-size: 2em;
+  text-shadow: none;
+}
+
+.nikofe-input:focus{   
+  border-color: #7CA691;
+  box-shadow:  0px 0px 5px 2px #7CA691;
+  outline: 0 none;
+}
+
+
+
 

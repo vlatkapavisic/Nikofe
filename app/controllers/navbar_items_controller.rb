@@ -3,7 +3,6 @@ class NavbarItemsController < ApplicationController
   before_action :get_website
   before_action :authenticate_user!
 
-
   # GET /navbar_items/new
   def new
     @navbar_item = NavbarItem.new
@@ -23,10 +22,8 @@ class NavbarItemsController < ApplicationController
     respond_to do |format|
       if @navbar_item.save
         format.html { redirect_to website_structure_url, notice: "Navbar item \"#{@navbar_item.name}\" was successfully created." }
-        format.json { render action: 'show', status: :created, location: @navbar_item }
       else
         format.html { render action: 'new' }
-        format.json { render json: @navbar_item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -36,10 +33,8 @@ class NavbarItemsController < ApplicationController
     respond_to do |format|
       if @navbar_item.update(navbar_item_params)
         format.html { redirect_to website_structure_url, notice: "Navbar item \"#{@navbar_item.name}\" was successfully updated." }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @navbar_item.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -49,7 +44,6 @@ class NavbarItemsController < ApplicationController
     @navbar_item.destroy
     respond_to do |format|
       format.html { redirect_to website_structure_url, notice: "Navbar item \"#{@navbar_item.name}\" was deleted." }
-      format.json { head :no_content }
     end
   end
 

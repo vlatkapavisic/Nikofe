@@ -15,31 +15,31 @@
           <% end %>
           <div class="form-group">
             <%= f.label :name %><br>
-            <%= f.text_field :name, class: "form-control" %>
+            <%= f.text_field :name, class: "form-control nikofe-input" %>
           </div>
           <div class="form-group">
             <%= f.label :home_title %> <small>(the title on your homepage)</small><br>
-            <%= f.text_field :home_title, class: "form-control" %>
+            <%= f.text_field :home_title, class: "form-control nikofe-input" %>
           </div>
           <div class="form-group">
             <%= f.label :home_body %> <small>(the text under the title on your homepage)</small><br>
-            <%= f.text_area :home_body, class: "form-control", rows: 7 %>
+            <%= f.text_area :home_body, class: "form-control nikofe-input", rows: 7 %>
           </div>
           <div class="form-group">
             <%= f.label :home_cover %> <small>(the background photo for your homepage)</small><br>
-            <%= f.file_field :home_cover, class: "form-control" %>
+            <%= f.file_field :home_cover, class: "form-control nikofe-input" %>
           </div>
           <div class="form-group">
             <%= f.label :navbar_color %><br>
-            <%= f.color_field :navbar_color, class: "form-control" %>
+            <%= f.color_field :navbar_color, class: "form-control nikofe-input" %>
           </div>
           <div class="form-group">
             <%= f.label :navbar_text_color %><br>
-            <%= f.color_field :navbar_text_color, class: "form-control" %>
+            <%= f.color_field :navbar_text_color, class: "form-control nikofe-input" %>
           </div>
           <div class="form-group">
             <%= f.label :jumbotron_text_color %><br>
-            <%= f.color_field :jumbotron_text_color, class: "form-control" %>
+            <%= f.color_field :jumbotron_text_color, class: "form-control nikofe-input" %>
           </div>
           <div><%= f.submit @button_text, class: "btn btn-default" %></div>
         <% end %>

@@ -1,10 +1,6 @@
 class WebsitesController < ApplicationController
   before_action :get_website, only: [:show, :edit, :update, :destroy]
 
-  # GET /websites/1
-  def show
-  end
-
   # GET /websites/new
   def new
     @website = Website.new
@@ -24,10 +20,8 @@ class WebsitesController < ApplicationController
     respond_to do |format|
       if @website.save
         format.html { redirect_to website_structure_url, notice: 'Website was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @website }
       else
         format.html { render action: 'new' }
-        format.json { render json: @website.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -39,10 +33,8 @@ class WebsitesController < ApplicationController
     respond_to do |format|
       if @website.update(website_ps)
         format.html { redirect_to website_structure_url, notice: 'Website was successfully updated.' }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @website.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -52,7 +44,6 @@ class WebsitesController < ApplicationController
     @website.destroy
     respond_to do |format|
       format.html { redirect_to websites_url }
-      format.json { head :no_content }
     end
   end
 

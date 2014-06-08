@@ -4,15 +4,6 @@ class PagesController < ApplicationController
   before_action :get_navbar_items, only: [:new, :edit, :create]
   before_action :authenticate_user!
 
-  # GET /pages
-  def index
-    @pages = current_user.pages.all
-  end
-
-  # GET /pages/1
-  def show
-  end
-
   # GET /pages/new
   def new
     @page = Page.new
@@ -33,10 +24,8 @@ class PagesController < ApplicationController
     respond_to do |format|
       if @page.save
         format.html { redirect_to website_structure_url, notice: "Page \"#{@page.title}\" was successfully created." }
-        format.json { render action: 'show', status: :created, location: @page }
       else
         format.html { render action: 'new' }
-        format.json { render json: @page.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -48,10 +37,8 @@ class PagesController < ApplicationController
     respond_to do |format|
       if @page.update(page_ps)
         format.html { redirect_to website_structure_url, notice: "Page \"#{@page.title}\" was successfully updated." }
-        format.json { head :no_content }
       else
         format.html { render action: 'edit' }
-        format.json { render json: @page.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -61,7 +48,6 @@ class PagesController < ApplicationController
     @page.destroy
     respond_to do |format|
       format.html { redirect_to website_structure_url, notice: "Page \"#{@page.title}\" was deleted." }
-      format.json { head :no_content }
     end
   end
 

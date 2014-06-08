@@ -4,5 +4,5 @@ class User < ActiveRecord::Base
   has_many :navbar_items, dependent: :destroy
 
   devise :database_authenticatable, :registerable,
-         :recoverable, :rememberable, :trackable, :validatable
+    :recoverable, :rememberable, :trackable, :validatable
 end
