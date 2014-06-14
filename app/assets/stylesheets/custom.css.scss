@@ -8,7 +8,6 @@ body {
   padding-top: 60px;
 }
 
-
 section {
   overflow: auto;
 }
@@ -57,7 +56,6 @@ p {
 }
 
 footer {
-  margin-top: 45px;
   padding-top: 5px;
   border-top: 1px solid #eaeaea;
   color: #999;
@@ -117,7 +115,7 @@ footer ul li {
   text-shadow: none;
 }
 
-#navitem-select{
+.sm-input{
   width: 15em;
 }
 
@@ -132,6 +130,9 @@ footer ul li {
   outline: 0 none;
 }
 
+#extra{
+  display: none;
+}
 
 
 

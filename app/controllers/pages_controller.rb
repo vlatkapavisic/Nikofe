@@ -67,6 +67,6 @@ class PagesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def page_params
-      params.require(:page).permit(:title, :body, :navbar_item_id, :bootsy_image_gallery_id, :address)
+      params.require(:page).permit(:title, :body, :navbar_item_id, :address, :video_code)
     end
 end

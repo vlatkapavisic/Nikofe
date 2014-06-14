@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140602173752) do
+ActiveRecord::Schema.define(version: 20140614090849) do
 
   create_table "bootsy_image_galleries", force: true do |t|
     t.integer  "bootsy_resource_id"
@@ -53,6 +53,7 @@ ActiveRecord::Schema.define(version: 20140602173752) do
     t.integer  "navbar_position"
     t.integer  "pages_count"
     t.integer  "website_id"
+    t.string   "video_code"
   end
 
   add_index "pages", ["navbar_item_id"], name: "index_pages_on_navbar_item_id"
