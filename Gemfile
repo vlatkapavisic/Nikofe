@@ -14,6 +14,7 @@ gem 'jquery-turbolinks'
 group :development, :test do
 	gem 'sqlite3'
 	gem 'foreman'
+	gem 'rails-erd'
 end
 
 group :production do
