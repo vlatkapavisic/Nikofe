@@ -12,7 +12,7 @@ class WebsitesController < ApplicationController
 
   # POST /websites
   def create
-    website_ps = website_params # to_do: prettify
+    website_ps = website_params 
     website_ps[:user_id] = current_user.id # protection against mass assignment!
     website_ps[:slug] = website_params[:name].parameterize
     @website = Website.new(website_ps)
@@ -28,7 +28,7 @@ class WebsitesController < ApplicationController
 
   # PATCH/PUT /websites/1
   def update
-    website_ps = website_params # to_do: prettify
+    website_ps = website_params 
     website_ps[:slug] = website_params[:name].parameterize
     respond_to do |format|
       if @website.update(website_ps)

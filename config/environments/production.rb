@@ -14,7 +14,6 @@ Nikofe::Application.configure do
   config.consider_all_requests_local       = false
   config.action_controller.perform_caching = true
 
-
   # Enable Rack::Cache to put a simple HTTP cache in front of your application
   # Add `rack-cache` to your Gemfile before enabling this.
   # For large-scale production use, consider using a caching reverse proxy like nginx, varnish or squid.
@@ -41,7 +40,7 @@ Nikofe::Application.configure do
   # config.action_dispatch.x_sendfile_header = 'X-Accel-Redirect' # for nginx
 
   # Force all access to the app over SSL, use Strict-Transport-Security, and use secure cookies.
-  #config.force_ssl = true
+  # config.force_ssl = true
 
   # Set to :debug to see everything in the log.
   config.log_level = :info

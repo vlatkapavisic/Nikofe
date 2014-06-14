@@ -15,7 +15,7 @@ class PagesController < ApplicationController
 
   # POST /pages
   def create
-    page_ps = page_params # to_do: prettify
+    page_ps = page_params 
     page_ps[:user_id] = current_user.id # protection against mass assignment!
     page_ps[:slug] = page_params[:title].parameterize
     page_ps[:website_id] = @website.id
@@ -32,7 +32,7 @@ class PagesController < ApplicationController
 
   # PATCH/PUT /pages/1
   def update
-    page_ps = page_params # to_do: prettify
+    page_ps = page_params 
     page_ps[:slug] = page_params[:title].parameterize
     respond_to do |format|
       if @page.update(page_ps)

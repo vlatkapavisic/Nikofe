@@ -14,7 +14,7 @@ class NavbarItemsController < ApplicationController
 
   # POST /navbar_items
   def create
-    navbar_item_ps = navbar_item_params # to_do: prettify
+    navbar_item_ps = navbar_item_params 
     navbar_item_ps[:user_id] = current_user.id
     navbar_item_ps[:website_id] = @website.id
     @navbar_item = NavbarItem.new(navbar_item_ps)
