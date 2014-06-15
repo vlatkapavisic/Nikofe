@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140614160005) do
+ActiveRecord::Schema.define(version: 20140615081215) do
 
   create_table "navbar_items", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
-    t.integer  "navbar_position"
     t.integer  "website_id"
   end
 
@@ -36,8 +35,6 @@ ActiveRecord::Schema.define(version: 20140614160005) do
     t.float    "latitude"
     t.float    "longitude"
     t.string   "address"
-    t.integer  "navbar_position"
-    t.integer  "pages_count"
     t.integer  "website_id"
     t.string   "video_code"
   end
@@ -78,11 +75,6 @@ ActiveRecord::Schema.define(version: 20140614160005) do
     t.string   "navbar_color",            default: "#F8F8F8"
     t.string   "navbar_text_color"
     t.string   "jumbotron_text_color"
-    t.string   "favicon_file_name"
-    t.string   "favicon_content_type"
-    t.integer  "favicon_file_size"
-    t.datetime "favicon_updated_at"
-    t.integer  "navitems_count"
     t.string   "slug"
   end
 
