@@ -1,0 +1,31 @@
+Domena je modelirana sa četiri klase: User, Website, Page i NavbarItem (sl. 8):
+1. User – Klasa, odnosno tablica User je implementirana pomoću Rails gem-a Devise. To je biblioteka koja olakšava implementaciju registriranja, prijave, odjave i ostalih funkcionalnosti vezanih za korisnike aplikacije. Korisnik je jednoznačno određen e-mailom, a pri registraciji i prijavi navodi lozinku, koja je u bazi spremljena u enkriptiranom obliku. Ako korisnik zaboravi svoju lozinku, može ju ponovno postaviti (reset), i tome služe atributi reset_password_token i reset_password_sent_at. Pružena je i mogućnost pamćenja korisnika prema kolačiću, o čemu se vodi evidencija preko atrubuta remember_created_at.
+2. Website – Temeljna klasa aplikacije je klasa Website, koja modelira web stranicu korisnika. Ima jedinstveno ime (atribut name); to ograničenje je potrebno zbog načina konstruiranja URL-ova: svaka stranica ima svoj slug koji slijedi iza baznog URL-a Nikofe CMS-a (nikofe.herokuapp.com/website-slug). Web stranica ima početnu stranicu u koju se može ubaciti slika (atributi čije ime počinje sa "home_cover") i tekst dobrodošlice (atribut home_body). Ova klasa čuva informacije o personalizaciji stranice – boja navigacijske trake (navbar_color), teksta na navigacijskoj traci (navbar_text_color) i teksta dobrodošlice (jumbotron_text_color).
+
+HTTP metoda
+Ruta
+Controller#akcija
+Koristi se za
+GET
+/pages/new
+pages_controller#new
+Prikaz forme za stvaranje nove pod-stranice
+POST
+/pages
+pages_controller#create
+Stvaranje nove pod-stranice
+GET
+/pages/:id
+pages_controller#show
+Prikaz pod-stranice
+GET
+/pages/:id/edit
+pages_controller#edit
+Prikaz forme za izmjenu pod-stranice
+PATCH/PUT
+/pages/:id
+pages_controller#update
+Izmjenu pod-stranice
+
+
+
